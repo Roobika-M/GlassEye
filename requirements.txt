@@ -1,0 +1,6 @@
+openai
+screenpipe
+pillow
+pytesseract
+keyboard
+python-dotenv
