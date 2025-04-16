@@ -1,0 +1,8 @@
+
+opencv-python
+pytesseract
+pyautogui
+speechrecognition
+pyttsx3
+torch
+transformers
