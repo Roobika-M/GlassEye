@@ -1,6 +1,4 @@
-openai
-screenpipe
-pillow
 pytesseract
+Pillow
+mss
 keyboard
-python-dotenv
