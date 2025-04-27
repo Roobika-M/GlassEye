@@ -37,7 +37,9 @@ class AssistantGUI(QWidget):
         audio_text = listen_and_transcribe()
         full_text = screen_text + " " + audio_text
 
+        print(f"DEBUG: full_text to summarize: {full_text}")
         summary = summarize_text(full_text)
+        print(f"DEBUG: summary generated: {summary}")
 
         save_to_file(full_text, "output/transcript.txt")
         save_to_file(summary, "output/summary.txt")

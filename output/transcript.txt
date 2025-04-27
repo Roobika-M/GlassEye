@@ -1,8 +1,8 @@
-s ev Run Terminal e
-New Task Promo Code Plan Supp ® main.py e x
-® guipy>
+s ev Run Terminal & SE}
+New Task Promo Code Plan Supp ® main.py ® x quirements.txt ® audio_capture.py ® summarizer.py ® utils.
+® guipy >
 Agent [Chany Get Started eae a
-DE PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QTextEdit
+1 £ PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QTextEdit
 
 qtSignal
 
@@ -10,57 +10,73 @@ capture_text_once
 
 ranscribe
 
-V Task Compl
+V_ Task Compl
 
-Ihave updated g
-Qt signal to safel
-GUI text box fro:
-thread. This resof
-threading error y|
-encountered.
+Ihave added det
 
-Now, when you 1am =
-and click “Start Summary,” the
-summarized text will be
-displayed in the GUI window
-without threading issues.
+statements in gu
 
-layo dge
+the full text being
 
-self.start_btn = QPushButton("st
+and the generat )
+in the console. TI
 
-", self)
-self.start_btn.clicked. connect (self. run_summary thread)
+verify what text i
 
-If you want to add continuous layout .addWidget (self.start_btn)
-updating or other features,
-please let me know.
+processed and sq
+
+GUI.
+
+Please run gui.py
+Summary,” and
+console output for these layo
+debug prints. This will help
+
+diagnose why the GUI might
+
+dge
+
+self.start_btn = QPushButton ("St ry", self)
+be showing unexpected text. =
+
+self.start_btn.clicked.connect (self.run_summary_thread)
+Let me know the console layout .addWidget (self.start_btn)
+
+output or if you need further
+assistance.
 
 Start New Task
 
 self .setLayout (layout)
 
-ourPuT
-
 OLE TERMINAL Pt
 
-Upgrade [s Background
+3B
 
-Adjusting for ambient noise...
-Listening for audio...
-Sep Listening timed out while waiting for phrase to start
-Qobject: Cannot create children for a parent that is in a different thread.
+B  curruT
 
-(Parent is QTextDocument (0x28bae59fd20), parent's thread is QThread(0x28b91037a90), current thread is QThread(0x28bae1d64b0)
-
-% (glass) PS C:\Users\Lenovo\Documents\GitHub\GlassEye> python gui.py
+Counting objects: 100% (16/16), done.
+Upgrade Delta compression using up to 8 threads
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (9/9), 2.60 KiB | 2.60 MiB/s, done.
+Total 9 (delta 4), reused 0 (delta 0), pack-reused 0 (from 0)
+Soap remote: Resolving deltas: 100% (4/4), completed with 4 local objects.
+To https://github.com/Roobika-M/GlassEye.git
+Oed7b75..9bf3d13 main -> main
+(glass) PS C:\Users\Lenovo\Documents\GitHub\GlassEye> python gui.py
 
 Device set to use cpu
 ce [iAee Manual Auto i
 
-% mains S@ @oA1 BLACKBOX Chat AddLogs @ CyberCoder Improve Code Share Code Link Open Website Generate Commit Message UTF-8 CRLF {} Python 3 3.10.0 (glass)
+% mains S@ @oA1 BLACKBOX Chat AddLogs @ CyberCoder Improve Code Share Code Link Open Website Generate Commit Message UTF-8 CRLF
+
+8
+
+{} Python & 3.10.0 (glass’)
 
 BLACKBOXAI: Open Chat
 
-[& Background OQ
+[& Background
+
+Qa
  
