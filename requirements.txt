@@ -6,3 +6,4 @@ pyttsx3
 torch
 transformers
 PyQt5
+PyAudio

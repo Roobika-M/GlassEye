@@ -1,0 +1,1 @@
+ PyQt5.QtWidgets import QApplication, QWidget, QVBox layout, QPushButton, QTextEdit and QQTTextEdit . When you click “Start Summary,” the summarized text will be displayed in the GUI window .

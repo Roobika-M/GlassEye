@@ -1,4 +1,5 @@
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QTextEdit
+from PyQt5.QtCore import pyqtSignal
 import threading
 import sys
 from screen_capture import capture_text_from_screenpipe, capture_text_once
@@ -7,6 +8,8 @@ from summarizer import summarize_text
 from utils import save_to_file
 
 class AssistantGUI(QWidget):
+    summary_ready = pyqtSignal(str)
+
     def __init__(self):
         super().__init__()
         self.setWindowTitle("AI Meeting Summarizer")
@@ -24,6 +27,8 @@ class AssistantGUI(QWidget):
 
         self.setLayout(layout)
 
+        self.summary_ready.connect(self.update_summary)
+
     def run_summary_thread(self):
         threading.Thread(target=self.summarize_live, daemon=True).start()
 
@@ -37,6 +42,9 @@ class AssistantGUI(QWidget):
         save_to_file(full_text, "output/transcript.txt")
         save_to_file(summary, "output/summary.txt")
 
+        self.summary_ready.emit(summary)
+
+    def update_summary(self, summary):
         self.summary_box.setPlainText(summary)
 
 def run_gui():
