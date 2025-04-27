@@ -4,6 +4,9 @@ import cv2
 import numpy as np
 from PIL import ImageGrab
 
+# Set the tesseract executable path explicitly
+pytesseract.pytesseract.tesseract_cmd = r'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
+
 def capture_text_from_screenpipe():
     print("Starting screen capture and OCR...")
     captured_text = ""
