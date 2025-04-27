@@ -20,7 +20,11 @@ def capture_text_from_screenpipe():
             gray_screen = cv2.cvtColor(screen, cv2.COLOR_BGR2GRAY)
 
             # Use pytesseract to do OCR on the captured image
-            text = pytesseract.image_to_string(gray_screen)
+            try:
+                text = pytesseract.image_to_string(gray_screen)
+            except pytesseract.TesseractError as e:
+                print(f"Tesseract OCR error: {e}")
+                text = ""
 
             if text:
                 print(f"Captured text: {text}")
