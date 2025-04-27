@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QTextEdit
 import threading
 import sys
-from screen_capture import capture_text_from_screenpipe
+from screen_capture import capture_text_from_screenpipe, capture_text_once
 from audio_capture import listen_and_transcribe
 from summarizer import summarize_text
 from utils import save_to_file
@@ -28,7 +28,7 @@ class AssistantGUI(QWidget):
         threading.Thread(target=self.summarize_live, daemon=True).start()
 
     def summarize_live(self):
-        screen_text = capture_text_from_screenpipe()
+        screen_text = capture_text_once()
         audio_text = listen_and_transcribe()
         full_text = screen_text + " " + audio_text
 

@@ -35,3 +35,20 @@ def capture_text_from_screenpipe():
         print("Screen capture interrupted by user.")
 
     return captured_text
+
+def capture_text_once():
+    print("Capturing screen text once...")
+    try:
+        screen = np.array(ImageGrab.grab())
+        gray_screen = cv2.cvtColor(screen, cv2.COLOR_BGR2GRAY)
+        try:
+            text = pytesseract.image_to_string(gray_screen)
+        except pytesseract.TesseractError as e:
+            print(f"Tesseract OCR error: {e}")
+            text = ""
+        if text:
+            print(f"Captured text: {text}")
+        return text
+    except Exception as e:
+        print(f"Error capturing screen text: {e}")
+        return ""
