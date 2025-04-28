@@ -1,82 +1,45 @@
-s ev Run Terminal & SE}
-New Task Promo Code Plan Supp ® main.py ® x quirements.txt ® audio_capture.py ® summarizer.py ® utils.
-® guipy >
-Agent [Chany Get Started eae a
-1 £ PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QTextEdit
+Google
 
-qtSignal
+G thunderbolts - Google Sea X | FE] HACKHAZARDS ‘25 Proje
 
-capture_text_once
+google.com/search?q=thunderbolts&sca_esv=4b3038fe8b0691 d6&sxsrf=AH Tn8zpjz3xn6z7z9s2oh-6LYXoRaY4Zg}
 
-ranscribe
+thunderbolts x F€EOQA
 
-V_ Task Compl
+All Images News Shopping Videos Short videos Forums — More
 
-Ihave added det
+Thunderbolts*
 
-statements in gu
+2025 - Action/Adventure - 2h 6m ?
 
-the full text being
+oF ea
 
-and the generat )
-in the console. TI
+aa
+( Gao Overview ) Cast Showtimes Reviews
 
-verify what text i
+Ree € ie : mA
+= r 2
+ls =)ERBOLTS
 
-processed and sq
+R TRAILER > 2:01
 
-GUI.
+tart Summary
 
-Please run gui.py
-Summary,” and
-console output for these layo
-debug prints. This will help
+Final Trailer | In Theaters May 2 (2025) - Movie |
 
-diagnose why the GUI might
+In two weeks, one last shot at redemption Reviews, Cast &
 
-dge
+& a : Marvel Studios' Thunderbolts* only i. Release Date in... 4g
 
-self.start_btn = QPushButton ("St ry", self)
-be showing unexpected text. =
+Tul INNER DAI 1 os
 
-self.start_btn.clicked.connect (self.run_summary_thread)
-Let me know the console layout .addWidget (self.start_btn)
+Watch movie EDIT SERVICES
 
-output or if you need further
-assistance.
+4 g v Qa
+‘Si 15 ied > Get tickets Already watched —_ Want to watch
+|
 
-Start New Task
+Florence Puch Lewis Pullman cerakiine af Harbour Wvatt — Sebastian
 
-self .setLayout (layout)
-
-OLE TERMINAL Pt
-
-3B
-
-B  curruT
-
-Counting objects: 100% (16/16), done.
-Upgrade Delta compression using up to 8 threads
-Compressing objects: 100% (9/9), done.
-Writing objects: 100% (9/9), 2.60 KiB | 2.60 MiB/s, done.
-Total 9 (delta 4), reused 0 (delta 0), pack-reused 0 (from 0)
-Soap remote: Resolving deltas: 100% (4/4), completed with 4 local objects.
-To https://github.com/Roobika-M/GlassEye.git
-Oed7b75..9bf3d13 main -> main
-(glass) PS C:\Users\Lenovo\Documents\GitHub\GlassEye> python gui.py
-
-Device set to use cpu
-ce [iAee Manual Auto i
-
-% mains S@ @oA1 BLACKBOX Chat AddLogs @ CyberCoder Improve Code Share Code Link Open Website Generate Commit Message UTF-8 CRLF
-
-8
-
-{} Python & 3.10.0 (glass’)
-
-BLACKBOXAI: Open Chat
-
-[& Background
-
-Qa
+Cast >
  
