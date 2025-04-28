@@ -1,5 +1,7 @@
-from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QTextEdit, QLineEdit, QLabel
-from PyQt5.QtCore import pyqtSignal
+from PyQt5.QtWidgets import (
+    QApplication, QWidget, QVBoxLayout, QPushButton, QTextEdit, QLineEdit, QLabel, QGroupBox, QSizePolicy, QStackedWidget
+)
+from PyQt5.QtCore import pyqtSignal, Qt
 import threading
 import sys
 from screen_capture import capture_text_once
@@ -14,39 +16,101 @@ class AssistantGUI(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("GlassEye Chatbot")
-        self.setGeometry(200, 200, 600, 600)
+        self.setGeometry(200, 200, 700, 700)
 
-        layout = QVBoxLayout()
+        self.captured_text = ""
 
-        self.summary_box = QTextEdit(self)
+        main_layout = QVBoxLayout()
+        self.setLayout(main_layout)
+
+        # Stacked widget to switch between choice, summary, and QA views
+        self.stacked_widget = QStackedWidget()
+        main_layout.addWidget(self.stacked_widget)
+
+        # Choice widget
+        choice_widget = QWidget()
+        choice_layout = QVBoxLayout()
+        choice_widget.setLayout(choice_layout)
+
+        choice_label = QLabel("Choose an option:")
+        choice_label.setAlignment(Qt.AlignCenter)
+        choice_label.setStyleSheet("font-size: 18px; font-weight: bold;")
+        choice_layout.addWidget(choice_label)
+
+        btn_summary = QPushButton("Get Summary")
+        btn_summary.setFixedHeight(50)
+        btn_summary.clicked.connect(self.show_summary_view)
+        choice_layout.addWidget(btn_summary)
+
+        btn_qa = QPushButton("Ask Questions")
+        btn_qa.setFixedHeight(50)
+        btn_qa.clicked.connect(self.show_qa_view)
+        choice_layout.addWidget(btn_qa)
+
+        self.stacked_widget.addWidget(choice_widget)
+
+        # Summary view
+        self.summary_widget = QWidget()
+        summary_layout = QVBoxLayout()
+        self.summary_widget.setLayout(summary_layout)
+
+        self.summary_box = QTextEdit()
         self.summary_box.setReadOnly(True)
-        layout.addWidget(QLabel("Summary:"))
-        layout.addWidget(self.summary_box)
+        self.summary_box.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        summary_layout.addWidget(self.summary_box)
 
-        self.start_btn = QPushButton("Start Summary", self)
+        self.start_btn = QPushButton("Start Summary")
+        self.start_btn.setFixedHeight(40)
         self.start_btn.clicked.connect(self.run_summary_thread)
-        layout.addWidget(self.start_btn)
+        summary_layout.addWidget(self.start_btn)
 
-        self.question_input = QLineEdit(self)
+        self.back_btn_summary = QPushButton("Back")
+        self.back_btn_summary.setFixedHeight(40)
+        self.back_btn_summary.clicked.connect(self.show_choice_view)
+        summary_layout.addWidget(self.back_btn_summary)
+
+        self.stacked_widget.addWidget(self.summary_widget)
+
+        # QA view
+        self.qa_widget = QWidget()
+        qa_layout = QVBoxLayout()
+        self.qa_widget.setLayout(qa_layout)
+
+        self.question_input = QLineEdit()
         self.question_input.setPlaceholderText("Enter your question here")
-        layout.addWidget(QLabel("Ask a question:"))
-        layout.addWidget(self.question_input)
+        self.question_input.setFixedHeight(30)
+        qa_layout.addWidget(self.question_input)
 
-        self.ask_btn = QPushButton("Get Answer", self)
+        self.ask_btn = QPushButton("Get Answer")
+        self.ask_btn.setFixedHeight(40)
         self.ask_btn.clicked.connect(self.run_qa_thread)
-        layout.addWidget(self.ask_btn)
+        qa_layout.addWidget(self.ask_btn)
 
-        self.answer_box = QTextEdit(self)
+        self.answer_box = QTextEdit()
         self.answer_box.setReadOnly(True)
-        layout.addWidget(QLabel("Answer:"))
-        layout.addWidget(self.answer_box)
+        self.answer_box.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        qa_layout.addWidget(self.answer_box)
 
-        self.setLayout(layout)
+        self.back_btn_qa = QPushButton("Back")
+        self.back_btn_qa.setFixedHeight(40)
+        self.back_btn_qa.clicked.connect(self.show_choice_view)
+        qa_layout.addWidget(self.back_btn_qa)
+
+        self.stacked_widget.addWidget(self.qa_widget)
 
         self.summary_ready.connect(self.update_summary)
         self.answer_ready.connect(self.update_answer)
 
-        self.captured_text = ""
+        self.show_choice_view()
+
+    def show_choice_view(self):
+        self.stacked_widget.setCurrentIndex(0)
+
+    def show_summary_view(self):
+        self.stacked_widget.setCurrentIndex(1)
+
+    def show_qa_view(self):
+        self.stacked_widget.setCurrentIndex(2)
 
     def run_summary_thread(self):
         threading.Thread(target=self.summarize_live, daemon=True).start()
