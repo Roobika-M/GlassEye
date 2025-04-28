@@ -1,5 +1,5 @@
 from PyQt5.QtWidgets import (
-    QApplication, QWidget, QVBoxLayout, QPushButton, QTextEdit, QLineEdit, QLabel, QGroupBox, QSizePolicy, QStackedWidget
+    QApplication, QWidget, QVBoxLayout, QPushButton, QTextEdit, QLineEdit, QLabel, QGroupBox, QSizePolicy, QStackedWidget, QMessageBox
 )
 from PyQt5.QtCore import pyqtSignal, Qt
 import threading
@@ -37,13 +37,21 @@ class AssistantGUI(QWidget):
         choice_label.setStyleSheet("font-size: 18px; font-weight: bold;")
         choice_layout.addWidget(choice_label)
 
+        choice_desc = QLabel("Select 'Get Summary' to capture and summarize screen and audio content.\n"
+                             "Select 'Ask Questions' to ask questions based on captured content.")
+        choice_desc.setAlignment(Qt.AlignCenter)
+        choice_desc.setWordWrap(True)
+        choice_layout.addWidget(choice_desc)
+
         btn_summary = QPushButton("Get Summary")
         btn_summary.setFixedHeight(50)
+        btn_summary.setToolTip("Capture screen and audio, then generate a summary.")
         btn_summary.clicked.connect(self.show_summary_view)
         choice_layout.addWidget(btn_summary)
 
         btn_qa = QPushButton("Ask Questions")
         btn_qa.setFixedHeight(50)
+        btn_qa.setToolTip("Ask questions based on the captured content.")
         btn_qa.clicked.connect(self.show_qa_view)
         choice_layout.addWidget(btn_qa)
 
@@ -54,6 +62,10 @@ class AssistantGUI(QWidget):
         summary_layout = QVBoxLayout()
         self.summary_widget.setLayout(summary_layout)
 
+        summary_instr = QLabel("Click 'Start Summary' to capture screen and audio, then generate and display a summary.")
+        summary_instr.setWordWrap(True)
+        summary_layout.addWidget(summary_instr)
+
         self.summary_box = QTextEdit()
         self.summary_box.setReadOnly(True)
         self.summary_box.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
@@ -61,11 +73,13 @@ class AssistantGUI(QWidget):
 
         self.start_btn = QPushButton("Start Summary")
         self.start_btn.setFixedHeight(40)
+        self.start_btn.setToolTip("Start capturing and summarizing content.")
         self.start_btn.clicked.connect(self.run_summary_thread)
         summary_layout.addWidget(self.start_btn)
 
         self.back_btn_summary = QPushButton("Back")
         self.back_btn_summary.setFixedHeight(40)
+        self.back_btn_summary.setToolTip("Return to the main menu.")
         self.back_btn_summary.clicked.connect(self.show_choice_view)
         summary_layout.addWidget(self.back_btn_summary)
 
@@ -76,13 +90,19 @@ class AssistantGUI(QWidget):
         qa_layout = QVBoxLayout()
         self.qa_widget.setLayout(qa_layout)
 
+        qa_instr = QLabel("Enter a question related to the captured content and click 'Get Answer'.\n"
+                          "The assistant answers questions based on the captured screen and audio content.")
+        qa_instr.setWordWrap(True)
+        qa_layout.addWidget(qa_instr)
+
         self.question_input = QLineEdit()
-        self.question_input.setPlaceholderText("Enter your question here")
+        self.question_input.setPlaceholderText("e.g., What are the key points from the meeting?")
         self.question_input.setFixedHeight(30)
         qa_layout.addWidget(self.question_input)
 
         self.ask_btn = QPushButton("Get Answer")
         self.ask_btn.setFixedHeight(40)
+        self.ask_btn.setToolTip("Submit your question and get an answer based on captured content.")
         self.ask_btn.clicked.connect(self.run_qa_thread)
         qa_layout.addWidget(self.ask_btn)
 
@@ -93,6 +113,7 @@ class AssistantGUI(QWidget):
 
         self.back_btn_qa = QPushButton("Back")
         self.back_btn_qa.setFixedHeight(40)
+        self.back_btn_qa.setToolTip("Return to the main menu.")
         self.back_btn_qa.clicked.connect(self.show_choice_view)
         qa_layout.addWidget(self.back_btn_qa)
 
@@ -139,8 +160,11 @@ class AssistantGUI(QWidget):
 
     def answer_question_thread(self, question):
         if not self.captured_text:
-            self.answer_ready.emit("No captured text available. Please start summary first.")
-            return
+            # Capture screen and audio text on-demand
+            screen_text = capture_text_once()
+            audio_text = listen_and_transcribe()
+            full_text = screen_text + " " + audio_text
+            self.captured_text = full_text
         answer = answer_question(self.captured_text, question)
         self.answer_ready.emit(answer)
 

@@ -1,88 +1,42 @@
-e W = Thunderbolts* - Wikipedia
+x @® The Python Tutorial— Python” x
 
-x
+® Python » [English ¥] [3433 ¥} 3.13.3 Documentation » The Python Tutorial Theme [Auto ¥) | (
 
-Contents hide
+ind display
+Previous topic
+Changelog
 
-(Top)
-Premise
-Cast
-© Production
-Development
-Pre-production
-Filming
-Post-production
-Music
-Marketing
-Release
-Y Reception
-Box office projections
-References
+ig language. It has efficient high-level data structures and a sim-
+Next topic
+1. Whetting Your Ap
 
-External links
+‘ogramming. Python's elegant syntax and dynamic typing, to-
+bal language for scripting and rapid application development in
 
-team]
+This Page
 
-Cast
+Report a Bug
 
-Florence Pugh as Yelena Belova:
+trd library are freely available in source or binary form for all ma-
+Show Source
 
-Amember of the Thunderbolts who was trained in the Red Room as a Bla¢
-assassin./°] Pugh said the character has been affected by the traumatic ev
-recent Marvel Cinematic Universe (MCU) projects, including the death of h
-adoptive sister Natasha Romanoff / Black Widow in the film Avengers: Ena
-(2019).!41
+www.python.org/, and may be freely distributed. The same site
+hny free third party Python modules, programs and tools, and ad-
 
-Sebastian Stan as Bucky Barnes:
+lew functions and data types implemented in C or C++ (or other
+ble as an extension language for customizable applications.
 
-An enhanced super soldier with a cybernetic arm who is the de facto leade
-Thunderbotts.!15! Presumed killed in action during World War II, he reeme
-the present day as a brainwashed assassin before his programming was ri
-and has since been elected as a member of the United States Congress. 6
-compared Barnes to Jack Nicholson's character Randle McMurphy in the f
-Flew Over the Cuckoo's Nest (1975), saying they were both coming into a
-and degenerate group whose members need to be united.!”1
+the basic concepts and features of the Python language and sys-
+for hands-on experience, but all examples are self-contained, so
 
-Wyatt Russell as John Walker / U.S. Agent:
+Start Summary les, see The Python Standard Library. The Python Language
+language. To write extensions in C or C++, read Extending and
+[- API Reference Manual. There are also several books covering
 
-An enhanced super soldier and member of the Thunderbolts. He is a forme
-was chosen by the U.S. government to become Steve Rogers's successor
-honorable discharge in the Disney+ miniseries The Falcon and the Winter
-Olga Kurylenko as Antonia Dreykov / Taskmaster:
+This tutorial does not attempt to be comprehensive and cover every single feature, or even every commonly used
+feature. Instead, it introduces many of Python's most noteworthy features, and will give you a good idea of the
+language's flavor and style. After reading it, you will be able to read and write Python modules and programs,
+and you will be ready to learn more about the various Python library modules described in The Python Standard
 
-Amember of the Thunderbolts with photographic reflexes that allow her to
-controlled by her father, Dreykov, to complete missions for the Red Room |
-(2021).!1
-
-Lewis Pullman as Bob / Sentry / Void:
-
-A superpowered individual who suffers from amnesia.!®l As the Void, a vers
-invincible, spreads darkness, and can turn people into shadows.!!
-
-Lewis Pullman
-Geraldine Viswanathan
-David Harbour
-Hannah John-Kamen
-Julia Louis-Dreyfus
-
-Cinematography Andrew Droz Palermo
-
-=| GlassEye Chatbot
-
-Appearance
-
-Text
-
-a
-
-hide
-
-x
-
-Start Summary
-
-Geraldine Viswanathan as Mel: Valentina Allegra de Fontaine's assistant!"
-
-Back
-
+} (EEE | previous | next | modules | index
  
