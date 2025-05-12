@@ -1,1 +1,1 @@
- The Python tutorial does not attempt to be comprehensive and cover every single feature, or even every commonly used feature . It introduces many of Python's most noteworthy features, and will give you a good idea of the language's flavor and style . All examples are self-contained, so you can read and write Python modules and programs .
+ Albert Einstein published the theory of special relativity in 1905 . Albert A. Michelson, Hendrik. Lorentz, Henri Poincaré and others . Max Planck, Hermann Minkowski and others did CC — — Theory of Special relativity .

@@ -1,42 +1,45 @@
-x @® The Python Tutorial— Python” x
+W Theory of relativity - Wikipedia =
 
-® Python » [English ¥] [3433 ¥} 3.13.3 Documentation » The Python Tutorial Theme [Auto ¥) | (
+ie) enwikipedia.org o @
+= bog Ww IKIPEDIA | Q_ Search Wikipedia Search | Donate Create account Login +++
+«JZ passin =
+“ ®] GlassEye - o x
+Click ‘Start Summary’ to capture screen and audio, then generate and display a summary.
+Mp 113 languages v
+Contents hide Read Viewsource Viewhistory Tools v Appearance _ hide
+(Top) a Text
+Development ar - - a F C)
+acceptance yr ontological theories about relativity, see Relativism. For the silent (©) Small
+Special relativity O Standard
+General relativit pysics theories by Albert © Large
+Experimental ev Iblished in 1905 and 1915,
+i i Width
+Tests of spect lain the absence of arevi
+) the forces of nature.'© It
+Tests of gener Bl O Standard
+relativity stronomy. 7
+Mod licat O Wide
+lodern applicat ~
+athe 20th century, - Video simulation of the merger o Color (bet
+See also y by Isaac Newton. P1H41151 jt GW 150914, showing spacetime lor (beta)
+References ied entity of space and time, Se eee as the black O ‘Automatic
+Further reading and length contraction. In the oles orbit and merge
+J Light
+External links ticles and their fundamental O's
+Start Summary y, cosmology and astrophysics predicted extraordinary astronomical O Dark
+waves. [SI/4II5]
 
-ind display
-Previous topic
-Changelog
+Back
 
-ig language. It has efficient high-level data structures and a sim-
-Next topic
-1. Whetting Your Ap
+Development and acceptance
 
-‘ogramming. Python's elegant syntax and dynamic typing, to-
-bal language for scripting and rapid application development in
+Main articles: History of special relativity and History of general relativity
 
-This Page
+Albert Einstein published the theory of special relativity in 1905, building on many
+theoretical results and empirical findings obtained by Albert A. Michelson, Hendrik
 
-Report a Bug
+Lorentz, Henri Poincaré and others. Max Planck, Hermann Minkowski and others did CC —
 
-trd library are freely available in source or binary form for all ma-
-Show Source
+General relativity
 
-www.python.org/, and may be freely distributed. The same site
-hny free third party Python modules, programs and tools, and ad-
-
-lew functions and data types implemented in C or C++ (or other
-ble as an extension language for customizable applications.
-
-the basic concepts and features of the Python language and sys-
-for hands-on experience, but all examples are self-contained, so
-
-Start Summary les, see The Python Standard Library. The Python Language
-language. To write extensions in C or C++, read Extending and
-[- API Reference Manual. There are also several books covering
-
-This tutorial does not attempt to be comprehensive and cover every single feature, or even every commonly used
-feature. Instead, it introduces many of Python's most noteworthy features, and will give you a good idea of the
-language's flavor and style. After reading it, you will be able to read and write Python modules and programs,
-and you will be ready to learn more about the various Python library modules described in The Python Standard
-
-} (EEE | previous | next | modules | index
  

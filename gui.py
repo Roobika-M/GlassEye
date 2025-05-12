@@ -15,7 +15,7 @@ class AssistantGUI(QWidget):
 
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("GlassEye Chatbot")
+        self.setWindowTitle("GlassEye")
         self.setGeometry(200, 200, 700, 700)
 
         self.captured_text = ""
@@ -137,19 +137,32 @@ class AssistantGUI(QWidget):
         threading.Thread(target=self.summarize_live, daemon=True).start()
 
     def summarize_live(self):
-        screen_text = capture_text_once()
-        audio_text = listen_and_transcribe()
-        full_text = screen_text + " " + audio_text
-        self.captured_text = full_text
+        try:
+            screen_text = capture_text_once()
+            print(f"DEBUG: screen_text captured: {screen_text}")
+            audio_text = listen_and_transcribe()
+            print(f"DEBUG: audio_text captured: {audio_text}")
+            full_text = screen_text + " " + audio_text
+            self.captured_text = full_text
 
-        print(f"DEBUG: full_text to summarize: {full_text}")
-        summary = summarize_text(full_text)
-        print(f"DEBUG: summary generated: {summary}")
+            print(f"DEBUG: full_text to summarize: {full_text}")
+            # Call summarizer pipeline directly to get raw output for debugging
+            from summarizer import summarizer
+            raw_summary = summarizer(full_text, max_length=100, min_length=25, do_sample=False)
+            print(f"DEBUG: raw summarizer output: {raw_summary}")
+            summary = raw_summary[0]['summary_text']
+            if not summary.strip():
+                summary = full_text  # fallback to original text if summary empty
+            print(f"DEBUG: summary generated: {summary}")
 
-        save_to_file(full_text, "output/transcript.txt")
-        save_to_file(summary, "output/summary.txt")
+            save_to_file(full_text, "output/transcript.txt")
+            save_to_file(summary, "output/summary.txt")
 
-        self.summary_ready.emit(summary)
+            self.summary_ready.emit(summary)
+        except Exception as e:
+            error_msg = f"Error during summarization: {str(e)}"
+            print(error_msg)
+            self.summary_ready.emit(error_msg)
 
     def run_qa_thread(self):
         question = self.question_input.text().strip()
@@ -159,14 +172,22 @@ class AssistantGUI(QWidget):
         threading.Thread(target=self.answer_question_thread, args=(question,), daemon=True).start()
 
     def answer_question_thread(self, question):
-        if not self.captured_text:
-            # Capture screen and audio text on-demand
-            screen_text = capture_text_once()
-            audio_text = listen_and_transcribe()
-            full_text = screen_text + " " + audio_text
-            self.captured_text = full_text
-        answer = answer_question(self.captured_text, question)
-        self.answer_ready.emit(answer)
+        try:
+            if not self.captured_text:
+                # Capture screen and audio text on-demand
+                screen_text = capture_text_once()
+                print(f"DEBUG: screen_text captured for QA: {screen_text}")
+                audio_text = listen_and_transcribe()
+                print(f"DEBUG: audio_text captured for QA: {audio_text}")
+                full_text = screen_text + " " + audio_text
+                self.captured_text = full_text
+            answer = answer_question(self.captured_text, question)
+            print(f"DEBUG: answer generated: {answer}")
+            self.answer_ready.emit(answer)
+        except Exception as e:
+            error_msg = f"Error during question answering: {str(e)}"
+            print(error_msg)
+            self.answer_ready.emit(error_msg)
 
     def update_summary(self, summary):
         self.summary_box.setPlainText(summary)
