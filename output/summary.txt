@@ -1,1 +1,1 @@
- Albert Einstein published the theory of special relativity in 1905 . Albert A. Michelson, Hendrik. Lorentz, Henri Poincaré and others . Max Planck, Hermann Minkowski and others did CC — — Theory of Special relativity .
+ GlassEye captures screen and audio, then generates a summary . Use this summary to help users with reading comprehension and vocabulary .
